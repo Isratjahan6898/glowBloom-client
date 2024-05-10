@@ -8,9 +8,11 @@ export const AuthContex = createContext(null);
 
 const FirebaseProvider = ({children}) => {
     const [user, setUser]= useState(null);
+    const[loading, setLoading]= useState(true)
 
     //register
     const createUser =(email, password)=>{
+        setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
@@ -18,6 +20,7 @@ const FirebaseProvider = ({children}) => {
     //login
 
     const signIn = (email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email,password)
     }
 
@@ -25,6 +28,7 @@ const FirebaseProvider = ({children}) => {
     //logOut
     
     const logOut =()=>{
+        setLoading(true)
         return signOut(auth)
     }
 
@@ -32,6 +36,7 @@ const FirebaseProvider = ({children}) => {
         const unSubscribe= onAuthStateChanged(auth,currentUser=>{
             console.log('user in on state changed', currentUser);
             setUser(currentUser);
+            setLoading(false)
         })
 
         return ()=>{
@@ -44,7 +49,8 @@ const FirebaseProvider = ({children}) => {
         user,
         createUser,
         logOut,
-        signIn
+        signIn,
+        loading
     }
     return (
         <AuthContex.Provider value={allValues}>

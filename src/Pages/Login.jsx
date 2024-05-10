@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
 
 
@@ -7,6 +7,10 @@ const Login = () => {
 
   const {signIn} = useContext(AuthContex);
   console.log(signIn);
+
+  const location = useLocation();
+  const navigate = useNavigate();
+  console.log(location);
 
   const handleLogin =e=>{
     e.preventDefault();
@@ -18,6 +22,8 @@ const Login = () => {
     signIn(email, password)
     .then(result=>{
       console.log(result.user);
+
+      navigate(location?.state? location.state :'/')
     })
     .catch(error=>{
       console.error(error)
