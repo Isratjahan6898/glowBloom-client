@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCac1cCs1I7Q8BANQ3cKpRPCJt0xfpWakg",
-  authDomain: "glowbloom-project.firebaseapp.com",
-  projectId: "glowbloom-project",
-  storageBucket: "glowbloom-project.appspot.com",
-  messagingSenderId: "463359065109",
-  appId: "1:463359065109:web:19f9e9f617ba6adfe5621c"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSANGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
