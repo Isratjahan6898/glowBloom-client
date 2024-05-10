@@ -1,8 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContex } from "../../firebase/FirebaseProvider/FirebaseProvider";
 
 
 const Navbar = () => {
+
+  const {user,logOut}= useContext(AuthContex);
+  console.log(logOut);
+
+
+  const handleLogOut = ()=>{
+
+    logOut()
+    .then()
+    .catch()
+  }
 
     const [theme , setTheme]= useState('light');
     useEffect(()=>{
@@ -40,14 +52,27 @@ const Navbar = () => {
       <div className='flex-none'>
         <ul className='menu menu-horizontal px-1'>
           <li>
-            <div className="font-bold">Home</div>
+            <Link to="/"><div className="font-bold">Home</div></Link>
           </li>
 
+         {
+          user? <div>
+
+        <li>
+          <button onClick={handleLogOut} className='font-bold  text-center'>Logout</button>
+        </li>
+          </div>
+        
+        
+        
+        :
+
           <li>
-           <Link to='/login'> <div className="font-bold">
-                Login
-                </div></Link>
-          </li>
+          <Link to='/login'> <div className="font-bold">
+             Login
+           </div></Link>
+</li>
+         }
 
           <li>
           <label className="swap swap-rotate ml-[30px] ">
@@ -67,6 +92,8 @@ const Navbar = () => {
           </li>
         </ul>
 
+
+      
         <div className='dropdown dropdown-end z-50'>
           <div
             tabIndex={0}
@@ -97,12 +124,12 @@ const Navbar = () => {
             <li>
               <div>Bid Requests</div>
             </li>
-            <li className='mt-2'>
+            {/* <li className='mt-2'>
               <button className='bg-gray-200 block text-center'>Logout</button>
-            </li>
+            </li> */}
           </ul>
         </div>
-      </div>
+    </div>
     </div>
   
         </div>

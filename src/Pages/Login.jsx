@@ -1,7 +1,28 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
 
 
 const Login = () => {
+
+  const {signIn} = useContext(AuthContex);
+  console.log(signIn);
+
+  const handleLogin =e=>{
+    e.preventDefault();
+    const form = e.target;
+    const email= form.email.value;
+    const password = form.password.value;
+    console.log(email,password);
+
+    signIn(email, password)
+    .then(result=>{
+      console.log(result.user);
+    })
+    .catch(error=>{
+      console.error(error)
+    })
+  }
     return (
         <div className="my-[60px]">
           
@@ -66,7 +87,7 @@ const Login = () => {
 
             <span className='w-1/5 border-b dark:border-gray-400 lg:w-1/4'></span>
           </div>
-          <form>
+          <form onSubmit={handleLogin}>
             <div className='mt-4'>
               <label
                 className='block mb-2 text-sm font-medium text-gray-600 '
@@ -104,7 +125,7 @@ const Login = () => {
             <div className='mt-6'>
               <button
                 type='submit'
-                className='w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'
+                className='w-full px-6 py-3 text-sm bg-red-400 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50'
               >
                 Sign In
               </button>
@@ -116,7 +137,7 @@ const Login = () => {
 
             <Link
               to='/register'
-              className='text-xs text-gray-500 uppercase  hover:underline'
+              className='text-xs text-red-700 uppercase  hover:underline'
             >
               or sign up
             </Link>
