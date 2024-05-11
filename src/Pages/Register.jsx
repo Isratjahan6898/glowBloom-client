@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -22,19 +24,7 @@ const Register = () => {
          
         console.log({name,photo,email,password});
 
-        //create user
-        // createUser(email,password)
-        // .then(()=>{
-        //   updateUserProfile(name, photo)
-        //   .then(()=>{
-        //     navigate(location?.state? location.state :'/')
 
-        //   })
-          
-        // })
-        // .catch(error=>{
-        //   console.error(error);
-        // })
 
 
         try{
@@ -43,6 +33,7 @@ const Register = () => {
           console.log(result);
           await updateUserProfile(name,photo)
           setUser({...user, photoURL:photo, displayName:name})
+          toast.success("user resister Create Successfully")
           navigate(location?.state? location.state :'/')
 
         }

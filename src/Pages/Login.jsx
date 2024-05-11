@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
@@ -22,11 +24,13 @@ const Login = () => {
     signIn(email, password)
     .then(result=>{
       console.log(result.user);
+      toast.success("user loging Create Successfully")
 
       navigate(location?.state? location.state :'/')
     })
     .catch(error=>{
       console.error(error)
+      toast.error("please give currect information")
     })
   }
     return (
