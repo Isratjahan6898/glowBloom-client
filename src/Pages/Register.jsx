@@ -1,15 +1,17 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
 
 
 
 const Register = () => {
 
-    const{createUser}= useContext(AuthContex);
-    console.log(createUser);
+    const{createUser, googleLogin, updateUserProfile,setUser, user}= useContext(AuthContex);
+    console.log(createUser, googleLogin, updateUserProfile);
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    const handleRegister =(e)=>{
+    const handleRegister =async(e)=>{
         e.preventDefault();
         
         const form = e.target;
@@ -18,16 +20,37 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
          
-        console.log(name,photo,email,password);
+        console.log({name,photo,email,password});
 
         //create user
-        createUser(email,password)
-        .then(result=>{
-          console.log(result.user);
-        })
-        .catch(error=>{
-          console.error(error);
-        })
+        // createUser(email,password)
+        // .then(()=>{
+        //   updateUserProfile(name, photo)
+        //   .then(()=>{
+        //     navigate(location?.state? location.state :'/')
+
+        //   })
+          
+        // })
+        // .catch(error=>{
+        //   console.error(error);
+        // })
+
+
+        try{
+
+          const result=await createUser (email,password)
+          console.log(result);
+          await updateUserProfile(name,photo)
+          setUser({...user, photoURL:photo, displayName:name})
+          navigate(location?.state? location.state :'/')
+
+        }
+        catch(error){
+          console.log(error);
+          
+
+        }
     }
 
 
@@ -73,9 +96,9 @@ const Register = () => {
               </svg>
             </div>
 
-            <span className='w-5/6 px-4 py-3 font-bold text-center'>
+            <button onClick={()=>googleLogin()} className='w-5/6 px-4 py-3 font-bold text-center'>
               Sign in with Google
-            </span>
+            </button>
           </div>
 
           <div className='flex items-center justify-between mt-4'>

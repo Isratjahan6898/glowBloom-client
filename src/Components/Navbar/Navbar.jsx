@@ -93,18 +93,19 @@ const Navbar = () => {
         </ul>
 
 
-      
-        <div className='dropdown dropdown-end z-50'>
+
+        {
+          user &&     <div className='dropdown dropdown-end z-50'>
           <div
             tabIndex={0}
             role='button'
             className='btn btn-ghost btn-circle avatar'
           >
-            <div className='w-10 rounded-full' title=''>
+            <div className='w-10 rounded-full' title={user.displayName}>
               <img
                 referrerPolicy='no-referrer'
                 alt='User Profile Photo'
-                src=''
+                src={user.photoURL}
               />
             </div>
           </div>
@@ -124,11 +125,15 @@ const Navbar = () => {
             <li>
               <div>Bid Requests</div>
             </li>
-            {/* <li className='mt-2'>
-              <button className='bg-gray-200 block text-center'>Logout</button>
-            </li> */}
+           
           </ul>
         </div>
+        }
+
+
+      
+    
+          
     </div>
     </div>
   

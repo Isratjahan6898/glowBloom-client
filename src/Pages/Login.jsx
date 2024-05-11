@@ -5,8 +5,8 @@ import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
 
 const Login = () => {
 
-  const {signIn} = useContext(AuthContex);
-  console.log(signIn);
+  const {signIn, googleLogin} = useContext(AuthContex);
+  console.log(signIn, googleLogin);
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -79,9 +79,9 @@ const Login = () => {
               </svg>
             </div>
 
-            <span className='w-5/6 px-4 py-3 font-bold text-center'>
+            <button onClick={()=>googleLogin()} className='w-5/6 px-4 py-3 font-bold text-center'>
               Sign in with Google
-            </span>
+            </button>
           </div>
 
           <div className='flex items-center justify-between mt-4'>
