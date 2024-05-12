@@ -12,6 +12,8 @@ import Home from './Components/Home/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 import FirebaseProvider from './firebase/FirebaseProvider/FirebaseProvider';
+import AddService from './Pages/AddService';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 
 
@@ -19,6 +21,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         path:"/",
@@ -31,6 +34,10 @@ const router = createBrowserRouter([
       {
         path:'/register',
         element:<Register></Register>
+      },
+      {
+        path:"/addService",
+        element:<AddService></AddService>
       }
     ]
   },

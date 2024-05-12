@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContex } from "../../firebase/FirebaseProvider/FirebaseProvider";
 
 
@@ -7,12 +7,14 @@ const Navbar = () => {
 
   const {user,logOut}= useContext(AuthContex);
   console.log(logOut);
+  const navigate = useNavigate();
 
 
   const handleLogOut = ()=>{
 
     logOut()
     .then()
+    navigate('/')
     .catch()
   }
 
@@ -33,7 +35,7 @@ const Navbar = () => {
       console.log(theme)
     
     return (
-        <div className="bg-red-300">
+        <div className="">
           <div className="lg:mx-[100px] mt-[40px] ">
              <div className='navbar p-[20px] shadow-sm container px-4 mx-auto'>
       <div className='flex-1'>
@@ -121,18 +123,20 @@ const Navbar = () => {
             tabIndex={0}
             className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
           >
-            <li>
-              <div className='justify-between'>Add Job</div>
-            </li>
-            <li>
-              <div>My Posted Jobs</div>
-            </li>
-            <li>
-              <div>My Bids</div>
-            </li>
-            <li>
-              <div>Bid Requests</div>
-            </li>
+            <p>
+            <Link to='/addService'>
+              <div className='justify-between'>Add service</div>
+            </Link>
+            </p>
+            <Link to='/manage'>
+              <div>Manage Service</div>
+            </Link>
+            <Link to='/booked'>
+              <div>Booked Service</div>
+            </Link>
+            <Link to='/service-to'>
+              <div>Service-To-Do</div>
+            </Link>
            
           </ul>
         </div>
