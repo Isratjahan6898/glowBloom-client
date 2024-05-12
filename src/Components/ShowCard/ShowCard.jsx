@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 const ShowCard = ({service}) => {
-   const {img, service_name, description, provider}= service
+   const {img, service_name, description, _id, provider}= service
     console.log(service);
     return (
         <div>
@@ -9,7 +10,8 @@ const ShowCard = ({service}) => {
             <figure><img src={img} alt="Shoes" /></figure>
   <div className=" ml-[30px]">
     <h2 className="card-title text-center">{service_name}</h2>
-    <p className="mb-[10px]">{
+    <p className="mb-[10px]">
+      {
         description.length> 100 && (
             <>
             
@@ -27,7 +29,7 @@ const ShowCard = ({service}) => {
 
     
     <div className="card-actions mb-[16px]">
-      <button className="btn text-white bg-red-500">View Details</button>
+     <Link to={`/service/${_id}`}> <button className="btn text-white bg-red-500">View Details</button></Link>
     </div>
   </div>
 </div>

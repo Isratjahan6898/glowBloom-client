@@ -16,6 +16,7 @@ import AddService from './Pages/AddService';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Service from './Pages/Service';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import ViewDetails from './Pages/ViewDetails';
 
 
 
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
       {
         path:'/service',
         element:<Service></Service>
+      },
+      {
+        path:'/service/:id',
+        element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/service/${params.id}`)
       }
     ]
   },

@@ -1,11 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
-
-const ServiceCard = ({service}) => {
-  const {img, service_name, _id, description,price, service_area, provider}= service;
+const ViewDetails = () => {
+    const service= useLoaderData();
+    const {img, service_name, _id, description,price, service_area, provider}= service;
     console.log(service);
     return (
-        <div className="mb-[20px] p-[15px]">
+        <div>
+             <div className="mb-[20px] p-[15px]">
             <div className="flex flex-col lg:flex-row card card-side bg-base-100 shadow-xl">
   <div>
   <figure><img className="w-[500px] h-[300px]" src={img} alt="Movie"/></figure>
@@ -13,14 +14,7 @@ const ServiceCard = ({service}) => {
   <div className="ml-[40px]">
     <h2 className="card-title mb-[15px] text-2xl lg:text-4xl"><span className="font-bold">Service_Name:</span>{service_name}</h2>
     <p className="font-bold">
-    {
-        description.length> 100 && (
-            <>
-            
-            {description.slice(0, 100) + "..."}
-            </>
-        )
-       }
+    {description}
     </p>
 
     <div className="my-[20px]">
@@ -37,12 +31,13 @@ const ServiceCard = ({service}) => {
     </div>
 
     <div className="card-actions my-[20px] ">
-   <Link to={`/service/${_id}`}> <button className="btn text-white bg-red-500">View Details</button></Link>
+   <Link > <button className="btn text-white bg-red-500">Booked Now</button></Link>
     </div>
   </div>
 </div>
         </div>
+        </div>
     );
 };
 
-export default ServiceCard;
+export default ViewDetails;
