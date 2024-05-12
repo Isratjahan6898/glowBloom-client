@@ -5,10 +5,12 @@ const ServiceCard = ({service}) => {
     console.log(service);
     return (
         <div className="mb-[20px] p-[15px]">
-            <div className="card card-side bg-base-100 shadow-xl">
-  <figure><img className="w-[1000px] h-[300px]" src={img} alt="Movie"/></figure>
+            <div className="flex flex-col lg:flex-row card card-side bg-base-100 shadow-xl">
+  <div>
+  <figure><img className="w-[500px] h-[300px]" src={img} alt="Movie"/></figure>
+  </div>
   <div className="ml-[40px]">
-    <h2 className="card-title mb-[15px] text-4xl"><span className="font-bold">Service_Name:</span>{service_name}</h2>
+    <h2 className="card-title mb-[15px] text-2xl lg:text-4xl"><span className="font-bold">Service_Name:</span>{service_name}</h2>
     <p className="font-bold">{description}</p>
 
     <div className="my-[20px]">
