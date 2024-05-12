@@ -14,6 +14,8 @@ import Register from './Pages/Register';
 import FirebaseProvider from './firebase/FirebaseProvider/FirebaseProvider';
 import AddService from './Pages/AddService';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
+import Service from './Pages/Service';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 
@@ -37,7 +39,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/addService",
-        element:<AddService></AddService>
+        element:<PrivateRoute><AddService></AddService></PrivateRoute>
+      },
+      {
+        path:'/service',
+        element:<Service></Service>
       }
     ]
   },
