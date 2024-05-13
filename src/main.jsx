@@ -19,6 +19,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ViewDetails from './Pages/ViewDetails';
 import BookedForm from './Pages/BookedForm';
 import Manage from './Pages/Manage';
+import Update from './Pages/Update';
 
 
 
@@ -54,13 +55,19 @@ const router = createBrowserRouter([
         loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/service/${params.id}`)
       },
       {
+        path:'/update/:id',
+        element:<PrivateRoute><Update></Update></PrivateRoute>,
+        loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/service/${params.id}`)
+      },
+
+      {
           path:'/book/:id',
           element:<PrivateRoute><BookedForm></BookedForm></PrivateRoute>,
           loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`)
       },
       {
         path:'/manage',
-        element:<Manage></Manage>
+        element:<PrivateRoute><Manage></Manage></PrivateRoute>
       }
     ]
   },

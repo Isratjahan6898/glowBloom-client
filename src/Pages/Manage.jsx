@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
 import axios from "axios";
 import Swal from 'sweetalert2'
+import { Link } from "react-router-dom";
 
 
 
@@ -83,8 +84,8 @@ const Manage = () => {
         </span>
       </div>
 
-      <div className='flex flex-col mt-6'>
-        <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
+      <div className='flex flex-row lg:flex-col mt-6'>
+        <div className='-mx-4 -my-2 overflow-x-auto  sm:-mx-6 lg:-mx-6'>
           <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
             <div className='overflow-hidden border border-gray-200  md:rounded-lg'>
               <table className='min-w-full divide-y divide-gray-200'>
@@ -197,7 +198,9 @@ const Manage = () => {
                               </svg>
                             </button>
     
-                            <button className='text-gray-500 transition-colors duration-200   hover:text-yellow-500 focus:outline-none'>
+                           <Link to={`/update/${service._id}`}>
+                           
+                           <button className='text-gray-500 transition-colors duration-200   hover:text-yellow-500 focus:outline-none'>
                               <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 fill='none'
@@ -213,9 +216,11 @@ const Manage = () => {
                                 />
                               </svg>
                             </button>
+                           </Link>
                           </div>
                         </td>
-                      </tr>)
+                      </tr>
+                    )
                   }
                 </tbody>
               </table>
