@@ -17,6 +17,8 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Service from './Pages/Service';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ViewDetails from './Pages/ViewDetails';
+import BookedForm from './Pages/BookedForm';
+import Manage from './Pages/Manage';
 
 
 
@@ -50,6 +52,15 @@ const router = createBrowserRouter([
         path:'/service/:id',
         element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/service/${params.id}`)
+      },
+      {
+          path:'/book/:id',
+          element:<PrivateRoute><BookedForm></BookedForm></PrivateRoute>,
+          loader: ({params})=>fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`)
+      },
+      {
+        path:'/manage',
+        element:<Manage></Manage>
       }
     ]
   },

@@ -61,9 +61,49 @@ const Navbar = () => {
             <NavLink to="/" ><div className="font-bold">Home</div></NavLink>
           </p>
 
-          <p className="mr-[20px]">
+          <p className="mr-[45px]">
             <NavLink to='/service'><div className="font-bold">Service</div></NavLink>
           </p>
+
+          {
+          user &&
+              <div className='dropdown dropdown-end z-50'>
+          <div
+            tabIndex={0}
+            role='button'
+            className='btn btn-ghost btn-circle avatar'
+          >
+           
+           <p className="mb-[30px] ml-[20px] mr-[60px]">
+            <div className="font-bold">DeshBoard</div>
+          </p>
+          
+          </div>
+          <ul
+            tabIndex={0}
+            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
+          >
+            <p>
+            <Link to='/addService'>
+              <div className='justify-between font-bold'>Add service</div>
+            </Link>
+            </p>
+            <Link to='/manage'>
+              <div className="font-bold">Manage Service</div>
+            </Link>
+            <Link to='/booked'>
+              <div className="font-bold">Booked Service</div>
+            </Link>
+            <Link to='/service-to'>
+              <div className="font-bold">Service-To-Do</div>
+            </Link>
+           
+          </ul>
+        </div>
+        }
+
+
+        
 
          {
           user? <div>
@@ -102,10 +142,14 @@ const Navbar = () => {
           </p>
         </ul>
 
+      
+        {/*  */}
+
 
 
         {
-          user &&     <div className='dropdown dropdown-end z-50'>
+          user &&
+              <div className='dropdown dropdown-end z-50'>
           <div
             tabIndex={0}
             role='button'
@@ -119,26 +163,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-          <ul
-            tabIndex={0}
-            className='menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52'
-          >
-            <p>
-            <Link to='/addService'>
-              <div className='justify-between'>Add service</div>
-            </Link>
-            </p>
-            <Link to='/manage'>
-              <div>Manage Service</div>
-            </Link>
-            <Link to='/booked'>
-              <div>Booked Service</div>
-            </Link>
-            <Link to='/service-to'>
-              <div>Service-To-Do</div>
-            </Link>
-           
-          </ul>
+         
         </div>
         }
 

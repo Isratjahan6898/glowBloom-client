@@ -31,7 +31,7 @@ const ViewDetails = () => {
     </div>
 
     <div className="card-actions my-[20px] ">
-   <Link > <button className="btn text-white bg-red-500">Booked Now</button></Link>
+   <Link to={ `/book/${_id}`}> <button className="btn text-white bg-red-500">Booked Now</button></Link>
     </div>
   </div>
 </div>
