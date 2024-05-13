@@ -12,16 +12,6 @@ const Manage = () => {
     console.log(user);
     const [services, setServices]= useState([])
 
-
-    // useEffect(()=>{
-
-    //     fetch(`${import.meta.env.VITE_API_URL}/servicess/${user?.email}`)
-    //     .then(res=>res.json())
-    //     .then(data=>{
-    //        setServices(data);
-    //     })
-    // },[user])
-
      
     useEffect(()=>{
         const getData = async()=>{

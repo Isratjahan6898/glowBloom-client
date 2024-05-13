@@ -20,6 +20,8 @@ import ViewDetails from './Pages/ViewDetails';
 import BookedForm from './Pages/BookedForm';
 import Manage from './Pages/Manage';
 import Update from './Pages/Update';
+import Booked from './Pages/Booked';
+import ServiceTo from './Pages/ServiceTo';
 
 
 
@@ -68,6 +70,14 @@ const router = createBrowserRouter([
       {
         path:'/manage',
         element:<PrivateRoute><Manage></Manage></PrivateRoute>
+      },
+      {
+        path:'/booked',
+        element:<PrivateRoute><Booked></Booked></PrivateRoute>
+      },
+      {
+        path:'/service-to',
+        element:<PrivateRoute><ServiceTo></ServiceTo></PrivateRoute>
       }
     ]
   },
