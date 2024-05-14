@@ -6,7 +6,7 @@ import { AuthContex } from "../../firebase/FirebaseProvider/FirebaseProvider";
 const Navbar = () => {
 
   const {user,logOut}= useContext(AuthContex);
-  console.log(logOut);
+  // console.log(logOut);
   const navigate = useNavigate();
 
 
@@ -32,7 +32,7 @@ const Navbar = () => {
           setTheme('light')
         }
       }
-      console.log(theme)
+      // console.log(theme)
     
     return (
         <div className="">

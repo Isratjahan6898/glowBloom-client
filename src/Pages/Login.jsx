@@ -8,11 +8,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
   const {signIn, googleLogin} = useContext(AuthContex);
-  console.log(signIn, googleLogin);
+  // console.log(signIn, googleLogin);
 
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  // console.log(location);
 
   const handleLogin =e=>{
     e.preventDefault();

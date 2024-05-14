@@ -16,7 +16,7 @@ const Booked = () => {
         }
         getData();
     },[user])
-    console.log(books);
+    // console.log(books);
 
     return (
         <div className="lg:mx-[100px] mt-[40px]">

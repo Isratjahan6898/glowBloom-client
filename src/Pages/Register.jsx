@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
 
     const{createUser, googleLogin, updateUserProfile,setUser, user}= useContext(AuthContex);
-    console.log(createUser, googleLogin, updateUserProfile);
+    // console.log(createUser, googleLogin, updateUserProfile);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
          
-        console.log({name,photo,email,password});
+        // console.log({name,photo,email,password});
 
 
 

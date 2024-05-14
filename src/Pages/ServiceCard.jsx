@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = ({service}) => {
   const {img, service_name, _id, description,price, service_area, provider}= service;
-    console.log(service);
+    // console.log(service);
     return (
         <div className="mb-[20px] p-[15px]">
             <div className="flex flex-col lg:flex-row card card-side bg-base-100 shadow-xl">

@@ -11,7 +11,7 @@ const BookedForm = () => {
     const {user}= useContext(AuthContex)
     const book = useLoaderData()
     const {img, service_name, _id, description,price, service_area, provider}= book;
-    console.log(book);
+    // console.log(book);
 
     const handleBookService = async e =>{
         e.preventDefault();

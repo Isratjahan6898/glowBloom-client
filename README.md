@@ -2,7 +2,7 @@
 
 Welcome to GlowBloom - Where Illumination Meets Growth
 
-Live Site: [GlowBloom.com](https://www.glowbloom.com)
+Live Site: [GlowBloom.com](https://glowbloom-project.web.app/)
 
 ## Category: Learning & Community
 

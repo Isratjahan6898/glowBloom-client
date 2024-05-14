@@ -19,14 +19,7 @@ const getData = async ()=>{
 
     
     
-    // useEffect(()=>{
-    //     const getService =async()=>{
-    //         const{data} =await axios(`${import.meta.env.VITE_API_URL}/service-to-do/${user?.email}`)
-    //         setBooks(data)
-    //     }
-    //     getService();
-    // },[user])
-    console.log(books);
+    
 
     const handleStatus = (_id, status)=>{
         axios.patch(`${import.meta.env.VITE_API_URL}/purchases/${_id}`, {status})

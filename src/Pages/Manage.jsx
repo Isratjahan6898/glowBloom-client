@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const Manage = () => {
 
     const {user}= useContext(AuthContex)
-    console.log(user);
+    // console.log(user);
     const [services, setServices]= useState([])
 
      
@@ -20,7 +20,7 @@ const Manage = () => {
         }
         getData();
     },[user])
-    console.log(services);
+    // console.log(services);
 
     const handleDelete = id =>{
         console.log(id)

@@ -10,7 +10,7 @@ import axios from 'axios';
 const AddService = () => {
 
    const {user}= useContext(AuthContex);
-   console.log(user);
+  //  console.log(user);
    const navigate = useNavigate(
 
    )
@@ -37,7 +37,7 @@ const AddService = () => {
 
       }
     }
-    console.log(serviceData);
+    // console.log(serviceData);
 
     try{
       const {data}= await axios.post(`${import.meta.env.VITE_API_URL}/service`,serviceData)

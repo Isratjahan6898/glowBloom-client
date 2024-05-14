@@ -10,7 +10,7 @@ const Update = () => {
     const service = useLoaderData();
     const navigate = useNavigate()
     const {img, service_name, _id, description,price, service_area, provider}= service;
-    console.log(service);
+    // console.log(service);
 
     const handleUpdate = async e =>{
 
@@ -35,7 +35,7 @@ const Update = () => {
     
           }
         }
-        console.log(serviceData);
+        // console.log(serviceData);
     
        try{
         const {data}= await axios.put(`${import.meta.env.VITE_API_URL}/service/${_id}`,serviceData)

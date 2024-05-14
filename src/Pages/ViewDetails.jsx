@@ -3,7 +3,7 @@ import { Link, useLoaderData } from "react-router-dom";
 const ViewDetails = () => {
     const service= useLoaderData();
     const {img, service_name, _id, description,price, service_area, provider}= service;
-    console.log(service);
+    // console.log(service);
     return (
         <div>
              <div className="mb-[20px] p-[15px] lg:mx-[60px]">
