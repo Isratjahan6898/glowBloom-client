@@ -1,3 +1,4 @@
+import AboutUs from "../AboutUs/AboutUs";
 import Banner from "../Banner/Banner";
 import Feedback from "../Feedback/Feedback";
 import HomeCard from "../HomeCard/HomeCard";
@@ -14,6 +15,7 @@ const Home = () => {
            <HomeCard></HomeCard>
            <Feedback></Feedback>
            <OurGallery></OurGallery>
+           <AboutUs></AboutUs>
            
           
             

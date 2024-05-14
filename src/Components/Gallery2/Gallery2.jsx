@@ -3,7 +3,7 @@
 const Gallery2 = () => {
     return (
         <div>
-                           <h1 className="font-extrabold text-2xl mb-[20px]">Our Salor Area</h1>
+                           <h1 className="font-extrabold text-2xl mb-[20px]">Our Salon Area</h1>
 
 <div className="carousel w-[550px] h-[300px]">
 <div id="item1" className="carousel-item w-full">
