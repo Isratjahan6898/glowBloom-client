@@ -23,7 +23,7 @@ const Service = () => {
     }
     console.log(search);
     return (
-        <div className="mx-[20px] lg:mx-[70px] my-[60px]">
+        <div className="mx-[20px] lg:mx-[100px] my-[60px]">
   <form >
     
   <div onClick={handleSearch}

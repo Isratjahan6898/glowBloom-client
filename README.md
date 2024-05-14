@@ -1,8 +1,16 @@
-# React + Vite
+# GlowBloom
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to GlowBloom - Where Illumination Meets Growth
 
-Currently, two official plugins are available:
+Live Site: [GlowBloom.com](https://www.glowbloom.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Category: Learning & Community
+
+### Features:
+- **Knowledge Sharing:** Explore a vast library of articles, tutorials, and resources covering a wide range of topics.
+- **Interactive Workshops:** Engage in live workshops and webinars led by industry experts, fostering hands-on learning experiences.
+- **Community Forums:** Connect with like-minded individuals, ask questions, share insights, and collaborate on projects.
+- **Personalized Learning Paths:** Create customized learning paths tailored to your interests and goals, with curated content recommendations.
+- **Networking Opportunities:** Expand your professional network, discover mentorship opportunities, and connect with potential collaborators.
+
+
