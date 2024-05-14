@@ -6,8 +6,8 @@ const ViewDetails = () => {
     console.log(service);
     return (
         <div>
-             <div className="mb-[20px] p-[15px]">
-            <div className="flex flex-col lg:flex-row card card-side bg-base-100 shadow-xl">
+             <div className="mb-[20px] p-[15px] lg:mx-[60px]">
+            <div className="flex flex-col lg:flex-row-reverse card card-side bg-base-100 shadow-xl">
   <div>
   <figure><img className="w-[500px] h-[300px]" src={img} alt="Movie"/></figure>
   </div>
