@@ -1,6 +1,8 @@
 import Banner from "../Banner/Banner";
 import Feedback from "../Feedback/Feedback";
 import HomeCard from "../HomeCard/HomeCard";
+import OurGallery from "../OurGallery/OurGallery";
+
 
 
 
@@ -11,6 +13,8 @@ const Home = () => {
            <Banner></Banner>
            <HomeCard></HomeCard>
            <Feedback></Feedback>
+           <OurGallery></OurGallery>
+           
           
             
         </div>
