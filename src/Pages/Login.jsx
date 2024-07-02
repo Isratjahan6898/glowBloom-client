@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 
+
 const Login = () => {
 
   const {signIn, googleLogin} = useContext(AuthContex);
@@ -34,7 +35,13 @@ const Login = () => {
     })
   }
     return (
+
+     
+
+
         <div className="my-[60px]">
+
+          
           
 
 

@@ -21,7 +21,7 @@ const Service = () => {
      setSearch(services.filter(a=>a.service_name.toLowerCase().includes(e.target.value)))
 
     }
-    // console.log(search);
+    console.log(search);
     return (
         <div className="mx-[20px] lg:mx-[100px] my-[60px]">
   <form >

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, } from "react-router-dom";
 import { AuthContex } from "../firebase/FirebaseProvider/FirebaseProvider";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -15,7 +15,7 @@ const BookedForm = () => {
 
     const handleBookService = async e =>{
         e.preventDefault();
-        const navigate = useNavigate();
+   
 
         if(user?.email === provider.email) {
           return toast.error('this action is not permitted')
@@ -45,7 +45,7 @@ const BookedForm = () => {
         const {data}= await axios.post(`${import.meta.env.VITE_API_URL}/book/`, bookData)
         console.log(data);
         toast.success('service booked successfully')
-        navigate('/booked')
+    
        }
        catch(err){
         console.log(err);
